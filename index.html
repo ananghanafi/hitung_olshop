@@ -1,0 +1,343 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <title>Percent Laba</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Londrina+Solid:wght@100&family=Russo+One&display=swap" rel="stylesheet">
+    <link href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' rel='stylesheet'>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
+    <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma/bulma.css"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(-100deg, #793925, #9c2653, #164050, #0f3a30);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* body {
+            color: #000;
+            overflow-x: hidden;
+            height: 100%;
+            background-color: #6e7582;
+            background-repeat: no-repeat;
+            font-family: 'Acme', sans-serif;
+        } */
+        
+        .card0 {
+            box-shadow: 0px 4px 8px 0px #757575;
+            border-radius: 10px;
+            border-radius: 10px
+        }
+        
+        .card2 {
+            margin: 0px 40px
+        }
+        
+        .login-box {     
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 400px;
+        padding: 40px;
+        transform: translate(-50%, -50%);
+        background: rgba(0,0,0,.5);
+        box-sizing: border-box;
+        box-shadow: 0 15px 25px rgba(0,0,0,.6);
+        border-radius: 10px;
+        }
+
+        .login-box h2 {
+        margin: 0 0 30px;
+        padding: 0;
+        color: #fff;
+        text-align: center;
+        }
+
+        .login-box .user-box {
+        position: relative;
+        }
+
+        .login-box .user-box input {
+        width: 100%;
+        padding: 10px 0;
+        font-size: 16px;
+        color: #fff;
+        margin-bottom: 30px;
+        border: none;
+        border-bottom: 1px solid #fff;
+        outline: none;
+        background: transparent;
+        }
+        .login-box .user-box label {
+        position: absolute;
+        top:0;
+        left: 0;
+        padding: 10px 0;
+        font-size: 16px;
+        color: #fff;
+        pointer-events: none;
+        transition: .5s;
+        }
+
+        .login-box .user-box input:focus ~ label,
+        .login-box .user-box input:valid ~ label {
+        top: -20px;
+        left: 0;
+        color: #03e9f4;
+        font-size: 12px;
+        }
+
+        .login-box form a {
+        position: relative;
+        display: inline-block;
+        padding: 10px 20px;
+        color: #03e9f4;
+        font-size: 16px;
+        text-decoration: none;
+        text-transform: uppercase;
+        overflow: hidden;
+        transition: .5s;
+        margin-top: 40px;
+        letter-spacing: 4px
+        }
+
+        .login-box a:hover {
+        background: #03e9f4;
+        color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 5px #03e9f4,
+                    0 0 25px #03e9f4,
+                    0 0 50px #03e9f4,
+                    0 0 100px #03e9f4;
+        }
+
+        .login-box a span {
+        position: absolute;
+        display: block;
+        }
+
+        .login-box a span:nth-child(1) {
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #03e9f4);
+        animation: btn-anim1 1s linear infinite;
+        }
+
+        @keyframes btn-anim1 {
+        0% {
+            left: -100%;
+        }
+        50%,100% {
+            left: 100%;
+        }
+        }
+
+        .login-box a span:nth-child(2) {
+        top: -100%;
+        right: 0;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(180deg, transparent, #03e9f4);
+        animation: btn-anim2 1s linear infinite;
+        animation-delay: .25s
+        }
+
+        @keyframes btn-anim2 {
+        0% {
+            top: -100%;
+        }
+        50%,100% {
+            top: 100%;
+        }
+        }
+
+        .login-box a span:nth-child(3) {
+        bottom: 0;
+        right: -100%;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(270deg, transparent, #03e9f4);
+        animation: btn-anim3 1s linear infinite;
+        animation-delay: .5s
+        }
+
+        @keyframes btn-anim3 {
+        0% {
+            right: -100%;
+        }
+        50%,100% {
+            right: 100%;
+        }
+        }
+
+        .login-box a span:nth-child(4) {
+        bottom: -100%;
+        left: 0;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(360deg, transparent, #03e9f4);
+        animation: btn-anim4 1s linear infinite;
+        animation-delay: .75s
+        }
+
+        @keyframes btn-anim4 {
+        0% {
+            bottom: -100%;
+        }
+        50%,100% {
+            bottom: 100%;
+        }
+        }
+        .image {
+            width: 90%;
+        }
+        
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <!-- <script src="//cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.js"></script> -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.js"></script>
+    <!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script> -->
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script type='text/javascript' src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js'></script>
+    <script type='text/javascript'></script>
+</head>
+
+<body oncontextmenu='return false' class='snippet-body'>
+    <div class="container-fluid px-md-5 px-lg-1 px-xl-5 py-5 mx-auto">
+        <div class="">
+            <div class="login-box">
+                <div>
+                    <div style="text-align: center; margin-top: -35%;margin-bottom: -10%;"> <img src="komik_depan.png" class="image"> </div>
+                </div>
+                <form>
+                  <div class="user-box">
+                    <input type="text" id="persen" placeholder="Contoh 25 untuk 25%">
+                    <label>Masukan Prosentase pajak/bunga</label>
+                  </div>
+                  <div class="user-box">
+                    <input type="text" id="rupiah" placeholder="Contoh 10.000">
+                    <label>Masukan Harga Dasar</label>
+                  </div>
+                  <div style="text-align: center;">
+                    <!-- <button id="hitung" onclick="btnHitung()" class="btn btn-primary waves-effect" style="border-radius: 20px;">Hitung</button> -->
+                    <a id="myLink" href="#" onclick="btnHitung();return false;" style="color: white;">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        Submit
+                      </a>
+                  </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<style>
+    .btn-blue {
+        margin-top: 10px;
+        background-color: #046582;
+        width: 150px;
+        color: #fff;
+        border-radius: 2px
+    }
+</style>
+<script>
+    var hasil = 0;
+    function btnHitung(params) {
+        // $('#persen').val();
+        var temp = Math.pow(10, 1000);
+        var persen = $('#persen').val();
+        var rupiah = $('#rupiah').val().replace(/[^,\d]/g, '');
+        if (persen>100) {
+            Swal.fire({title:"WARNING!!!",text:"Prosentase Harus Kurang dari 100", type:"error"});
+        }else{
+            hasil_temp = rupiah*(persen/100)
+            hasil = parseFloat(rupiah) + parseFloat(hasil_temp);
+            // document.getElementById("hasil").innerHTML = formatter.format(hasil);
+            Swal.fire({
+                showCloseButton: true,
+                customClass: 'swal-wide',
+                showCancelButton: false, // There won't be any cancel button
+                showConfirmButton: false, // There won't be any confirm button
+                html: `<div class="table-responsive" style="overflow-x: hidden;">
+                        <input type="text" value="`+formatter.format(hasil)+`" id="myInput">
+                        <div><button class="btn btn-blue text-center" onclick="myFunction()">Copy text</button></div>
+                    </div>`
+            })
+        }
+    }
+    var formatter = new Intl.NumberFormat('id-ID', {
+        style: 'currency',
+        currency: 'IDR',
+    });
+    /* //   .toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') */
+    var rupiah = document.getElementById("rupiah");
+    rupiah.addEventListener("keyup", function(e) {
+    // tambahkan 'Rp.' pada saat form di ketik
+    // gunakan fungsi formatRupiah() untuk mengubah angka yang di ketik menjadi format angka
+    rupiah.value = formatRupiah(this.value, "Rp. ");
+    });
+    function formatRupiah(angka, prefix){
+        var number_string = angka.replace(/[^,\d]/g, '').toString(),
+        split   		= number_string.split(','),
+        sisa     		= split[0].length % 3,
+        rupiah     		= split[0].substr(0, sisa),
+        ribuan     		= split[0].substr(sisa).match(/\d{3}/gi);
+    
+        // tambahkan titik jika yang di input sudah menjadi angka ribuan
+        if(ribuan){
+            separator = sisa ? '.' : '';
+            rupiah += separator + ribuan.join('.');
+        }
+    
+        rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
+        return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
+    }
+    function myFunction() {
+        /* Get the text field */
+        var copyText = document.getElementById("myInput");
+
+        /* Select the text field */
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+        /* Copy the text inside the text field */
+        document.execCommand("copy");
+
+        /* Alert the copied text */
+        // alert("Copied the text: " + copyText.value);
+        Swal.fire({
+            title: 'Berhasil Di Copy',
+            text: ''+copyText.value,
+            icon: 'success',
+            confirmButtonText: 'Ok'
+        })
+
+    } 
+</script>
